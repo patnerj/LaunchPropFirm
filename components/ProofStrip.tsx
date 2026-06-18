@@ -37,10 +37,10 @@ export default function ProofStrip() {
           {screens.map((screen, i) => (
             <Reveal key={screen.caption} delay={i * 150}>
               <a
-                href={screen.href}
+                href={screen.src}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block"
+                className="group block cursor-zoom-in"
               >
                 <div className="overflow-hidden rounded-xl border border-border-subtle transition-all duration-300 group-hover:scale-[1.03] group-hover:border-primary">
                   <Image
