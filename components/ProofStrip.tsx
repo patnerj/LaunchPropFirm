@@ -42,13 +42,12 @@ export default function ProofStrip() {
                 onClick={() => setLightbox({ src: screen.src, alt: screen.alt })}
                 className="group block w-full cursor-zoom-in text-left"
               >
-                <div className="overflow-hidden rounded-xl border border-border-subtle transition-all duration-300 group-hover:scale-[1.03] group-hover:border-primary">
+                <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-border-subtle transition-all duration-300 group-hover:scale-[1.03] group-hover:border-primary">
                   <Image
                     src={screen.src}
                     alt={screen.alt}
-                    width={760}
-                    height={480}
-                    className="h-auto w-full"
+                    fill
+                    className="object-cover object-top"
                   />
                 </div>
                 <p className="mt-3 text-center text-sm text-muted">
