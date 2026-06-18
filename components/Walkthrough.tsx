@@ -1,5 +1,9 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Reveal from "./Reveal";
+import Lightbox from "./Lightbox";
 
 const rows = [
   {
@@ -45,6 +49,8 @@ const rows = [
 ];
 
 export default function Walkthrough() {
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
+
   return (
     <section className="bg-bg-dark">
       <div className="mx-auto max-w-site px-5 pb-10 pt-14 md:px-8 md:pb-14 md:pt-[70px] lg:pt-[110px]">
@@ -62,10 +68,12 @@ export default function Walkthrough() {
                 row.reverse ? "md:flex-row-reverse" : "md:flex-row"
               }`}
             >
-              {/* Image — always first on mobile */}
               <div className="w-full md:w-[52%]">
                 <Reveal>
-                  <a href={row.image} target="_blank" rel="noopener noreferrer" className="block cursor-zoom-in">
+                  <button
+                    onClick={() => setLightbox({ src: row.image, alt: row.alt })}
+                    className="block w-full cursor-zoom-in text-left"
+                  >
                     <div className="overflow-hidden rounded-[14px] border border-border-subtle shadow-screenshot transition-opacity hover:opacity-90">
                       <Image
                         src={row.image}
@@ -75,11 +83,10 @@ export default function Walkthrough() {
                         className="h-auto w-full"
                       />
                     </div>
-                  </a>
+                  </button>
                 </Reveal>
               </div>
 
-              {/* Text */}
               <div className="w-full text-center md:w-[48%] md:text-left">
                 <Reveal delay={150}>
                   <p className="text-[13px] font-semibold uppercase tracking-[3px] text-primary">
@@ -97,6 +104,10 @@ export default function Walkthrough() {
           ))}
         </div>
       </div>
+
+      {lightbox && (
+        <Lightbox src={lightbox.src} alt={lightbox.alt} onClose={() => setLightbox(null)} />
+      )}
     </section>
   );
 }
