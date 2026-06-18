@@ -66,15 +66,17 @@ export default function OwnerControlRoom() {
             >
               <div className="w-full md:w-[52%]">
                 <Reveal>
-                  <div className="overflow-hidden rounded-[14px] border border-border-subtle shadow-screenshot">
-                    <Image
-                      src={row.image}
-                      alt={row.alt}
-                      width={1080}
-                      height={680}
-                      className="h-auto w-full"
-                    />
-                  </div>
+                  <a href={row.image} target="_blank" rel="noopener noreferrer" className="block cursor-zoom-in">
+                    <div className="overflow-hidden rounded-[14px] border border-border-subtle shadow-screenshot transition-opacity hover:opacity-90">
+                      <Image
+                        src={row.image}
+                        alt={row.alt}
+                        width={1080}
+                        height={680}
+                        className="h-auto w-full"
+                      />
+                    </div>
+                  </a>
                 </Reveal>
               </div>
               <div className="w-full text-center md:w-[48%] md:text-left">
