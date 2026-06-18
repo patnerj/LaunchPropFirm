@@ -12,14 +12,19 @@ export const WA = {
   readyToTalk: `${WA_BASE}?text=Hi%20Haris%2C%20I%27m%20ready%20to%20talk%20about%20the%20prop%20firm%20platform.`,
 };
 
-/** Placeholder demo URLs — replace before go-live */
+export const DEMO_BASE = "https://fundedpeak.walletrecovery.click";
+
 export const DEMO = {
-  trader: "https://demo-trader.example.com",
-  certificate: "https://demo-trader.example.com/certificate",
+  trader: `${DEMO_BASE}/dashboard/trading`,
+  certificate: `${DEMO_BASE}/dashboard/certificates`,
 };
 
-/** Base URL of the live platform (where legal/trust pages are served).
- *  Replace with your real platform domain before go-live. */
+export const DEMO_CREDENTIALS = {
+  username: "haris",
+  password: "asdf1122",
+};
+
+/** Base URL of the live platform */
 export const PLATFORM_BASE = "https://app.launchapropfirm.com";
 
 export const TRUST_LINKS: { href: string; label: string }[] = [

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { DEMO } from "./links";
+import { DEMO, DEMO_CREDENTIALS, WA } from "./links";
 import { CheckIcon, PlayIcon } from "./icons";
 import Reveal from "./Reveal";
 
@@ -21,7 +21,7 @@ export default function Hero() {
             "radial-gradient(ellipse 60% 50% at 20% 10%, rgba(124,110,245,0.18), transparent 70%)",
         }}
       />
-      {/* Radial green glow — bottom right (hidden on mobile) */}
+      {/* Radial green glow — bottom right */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 hidden md:block"
@@ -67,10 +67,22 @@ export default function Hero() {
                 Watch the 60-Second Tour
               </a>
             </div>
+            {/* Credentials hint */}
+            <p className="mt-3 text-center text-xs text-muted md:text-left">
+              Login with{" "}
+              <span className="font-mono text-txt/70">
+                {DEMO_CREDENTIALS.username}
+              </span>{" "}
+              /{" "}
+              <span className="font-mono text-txt/70">
+                {DEMO_CREDENTIALS.password}
+              </span>{" "}
+              — no signup needed.
+            </p>
           </Reveal>
 
           <Reveal delay={450}>
-            <ul className="mt-8 flex flex-col items-center gap-3 md:flex-row md:gap-6">
+            <ul className="mt-6 flex flex-col items-center gap-3 md:flex-row md:gap-6">
               {heroChecks.map((item) => (
                 <li key={item} className="flex items-center gap-2 text-sm text-muted">
                   <CheckIcon className="h-3.5 w-3.5 shrink-0 text-secondary" />
@@ -91,7 +103,7 @@ export default function Hero() {
                 width={1280}
                 height={800}
                 priority
-                className="h-auto w-full"
+                className="h-auto w-full object-cover object-top"
               />
             </div>
           </Reveal>

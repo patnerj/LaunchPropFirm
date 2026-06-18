@@ -1,4 +1,4 @@
-import { DEMO, WA } from "./links";
+import { DEMO, DEMO_CREDENTIALS, WA } from "./links";
 import { CheckIcon } from "./icons";
 import Reveal from "./Reveal";
 
@@ -67,6 +67,12 @@ export default function LiveDemo() {
               >
                 Open Trader Demo →
               </a>
+              <p className="mt-3 text-center text-xs text-muted">
+                Login:{" "}
+                <span className="font-mono text-txt/70">{DEMO_CREDENTIALS.username}</span>{" "}
+                /{" "}
+                <span className="font-mono text-txt/70">{DEMO_CREDENTIALS.password}</span>
+              </p>
             </div>
           </Reveal>
 
