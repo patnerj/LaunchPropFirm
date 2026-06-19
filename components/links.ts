@@ -12,7 +12,7 @@ export const WA = {
   readyToTalk: `${WA_BASE}?text=Hi%20Haris%2C%20I%27m%20ready%20to%20talk%20about%20the%20prop%20firm%20platform.`,
 };
 
-export const DEMO_BASE = "https://fundedpeak.walletrecovery.click";
+export const DEMO_BASE = "https://demo.launchapropfirm.com";
 
 export const DEMO = {
   trader: `${DEMO_BASE}/dashboard/trading`,
